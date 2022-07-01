@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: startup
+  name: frontend
 spec:
   containers:
-  - name: startup
-    image: brainupgrade/weather:monolith
+  - name: frontend
+    image: anshshrivastava/smartbankfrontend:v4
     startupProbe:
       httpGet:
         path: /
-        port: 8080
+        port: 80
       failureThreshold: 2
       successThreshold: 1
       periodSeconds: 5

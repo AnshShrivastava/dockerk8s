@@ -5,13 +5,13 @@ metadata:
 spec:
   containers:
   - name: probe-liveness-http
-    image: k8s.gcr.io/liveness
+    image: anshshrivastava/smartbankfrontend:v4
     args:
     - /server
     livenessProbe:
       httpGet:
-        path: /healthz
-        port: 8080
+        path: /
+        port: 80
         httpHeaders:
         - name: Custom-Header
           value: Awesome
